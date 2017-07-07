@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="/home/craigjb/Projects/gameslab-hw/gameslab-hw.sdk/fsbl/Release" key="bootgen_files_selection"/>
+	<item value="/home/craigjb/Projects/gameslab-sw" key="zynq_flash_files_selection"/>
+	<item value="/home/craigjb/Projects/gameslab-hw/gameslab-hw.sdk/fsbl/Release" key="last_stored_selection"/>
+</section>
