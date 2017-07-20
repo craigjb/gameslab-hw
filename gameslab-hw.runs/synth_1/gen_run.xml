@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1499397878">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1500527035">
   <File Type="VDS-TIMING-PB" Name="gameslab_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="gameslab_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="gameslab_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="gameslab_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="gameslab_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="gameslab_wrapper_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="gameslab_wrapper.vds"/>
   <File Type="PA-TCL" Name="gameslab_wrapper.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="gameslab_wrapper_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="gameslab_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="gameslab_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="gameslab_wrapper.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/bd/gameslab/gameslab.bd">
@@ -32,7 +32,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/gameslab.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/gameslab.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -40,5 +47,6 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="gameslab_gslcd_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="gameslab_processing_system7_0_0"/>
 </GenRun>

@@ -317,6 +317,8 @@ extern "C" {
 #include <stdio.h>
 #endif
 
+//#define NON_PS_INSTANTIATED_BITSTREAM 1
+
 
 /************************** Constant Definitions *****************************/
 /*

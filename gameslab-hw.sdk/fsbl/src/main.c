@@ -722,7 +722,7 @@ void FsblHandoff(u32 FsblStartAddr)
 	/*
 	 * Enable level shifter
 	 */
-	if(BitstreamFlag) {
+	if(1) {
 		/*
 		 * FSBL will not enable the level shifters for a NON PS instantiated
 		 * Bitstream

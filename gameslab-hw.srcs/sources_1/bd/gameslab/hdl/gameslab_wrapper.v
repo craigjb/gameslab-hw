@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-//Date        : Thu Jul  6 20:22:33 2017
+//Date        : Wed Jul 19 22:03:35 2017
 //Host        : gameslab-dev running 64-bit Debian GNU/Linux 9.0 (stretch)
 //Command     : generate_target gameslab_wrapper.bd
 //Design      : gameslab_wrapper
@@ -30,7 +30,13 @@ module gameslab_wrapper
     FIXED_IO_mio,
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
-    FIXED_IO_ps_srstb);
+    FIXED_IO_ps_srstb,
+    LCD_CLK,
+    LCD_DATA,
+    LCD_DEN,
+    LCD_DIM,
+    LCD_HSYNC,
+    LCD_VSYNC);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -52,6 +58,12 @@ module gameslab_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  output LCD_CLK;
+  output [23:0]LCD_DATA;
+  output LCD_DEN;
+  output [0:0]LCD_DIM;
+  output LCD_HSYNC;
+  output LCD_VSYNC;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -74,6 +86,12 @@ module gameslab_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire LCD_CLK;
+  wire [23:0]LCD_DATA;
+  wire LCD_DEN;
+  wire [0:0]LCD_DIM;
+  wire LCD_HSYNC;
+  wire LCD_VSYNC;
 
   gameslab gameslab_i
        (.DDR_addr(DDR_addr),
@@ -96,5 +114,11 @@ module gameslab_wrapper
         .FIXED_IO_mio(FIXED_IO_mio),
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
-        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb));
+        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .LCD_CLK(LCD_CLK),
+        .LCD_DATA(LCD_DATA),
+        .LCD_DEN(LCD_DEN),
+        .LCD_DIM(LCD_DIM),
+        .LCD_HSYNC(LCD_HSYNC),
+        .LCD_VSYNC(LCD_VSYNC));
 endmodule

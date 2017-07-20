@@ -56,8 +56,7 @@
 extern "C" {
 #endif
 
-#define FSBL_DEBUG_INFO
-#define STDOUT_BASEADDRESS 0xe0001000
+
 #define DEBUG_GENERAL	0x00000001    /* general debug  messages */
 #define DEBUG_INFO	0x00000002    /* More debug information */
 
