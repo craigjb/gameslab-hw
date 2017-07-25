@@ -42,6 +42,7 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 
 start_step init_design
@@ -49,16 +50,20 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param xicom.use_bs_reader 1
+  set_param tcl.collectionResultDisplayLimit 0
   create_project -in_memory -part xc7z010clg400-1
   set_property board_part craigjb.com:gameslab:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir /home/craigjb/Projects/gameslab-hw/gameslab-hw.cache/wt [current_project]
   set_property parent.project_path /home/craigjb/Projects/gameslab-hw/gameslab-hw.xpr [current_project]
-  set_property ip_repo_paths /home/craigjb/Projects/ip_repo/gslcd_1.0 [current_project]
+  set_property ip_repo_paths {
+  /home/craigjb/Projects/ip_repo/test_1.0
+  /home/craigjb/Projects/ip_repo/gslcd_1.0
+} [current_project]
   set_property ip_output_repo /home/craigjb/Projects/gameslab-hw/gameslab-hw.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES XPM_CDC [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet /home/craigjb/Projects/gameslab-hw/gameslab-hw.runs/synth_1/gameslab_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -suppress
   set_param project.isImplRun true
@@ -144,7 +149,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES XPM_CDC [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force gameslab_wrapper.mmi }
   write_bitstream -force gameslab_wrapper.bit 
   catch { write_sysdef -hwdef gameslab_wrapper.hwdef -bitfile gameslab_wrapper.bit -meminfo gameslab_wrapper.mmi -file gameslab_wrapper.sysdef }

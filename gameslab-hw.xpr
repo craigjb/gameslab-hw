@@ -19,6 +19,7 @@
     <Option Name="BoardPart" Val="craigjb.com:gameslab:part0:1.0"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/test_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/gslcd_1.0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -30,20 +31,20 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="gameslab"/>
     <Option Name="DSANumComputeUnits" Val="16"/>
-    <Option Name="WTXSimLaunchSim" Val="0"/>
+    <Option Name="WTXSimLaunchSim" Val="1"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="56"/>
-    <Option Name="WTModelSimExportSim" Val="56"/>
-    <Option Name="WTQuestaExportSim" Val="56"/>
-    <Option Name="WTIesExportSim" Val="56"/>
-    <Option Name="WTVcsExportSim" Val="56"/>
-    <Option Name="WTRivieraExportSim" Val="56"/>
-    <Option Name="WTActivehdlExportSim" Val="56"/>
+    <Option Name="WTXSimExportSim" Val="94"/>
+    <Option Name="WTModelSimExportSim" Val="94"/>
+    <Option Name="WTQuestaExportSim" Val="94"/>
+    <Option Name="WTIesExportSim" Val="94"/>
+    <Option Name="WTVcsExportSim" Val="94"/>
+    <Option Name="WTRivieraExportSim" Val="94"/>
+    <Option Name="WTActivehdlExportSim" Val="94"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -59,9 +60,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="gameslab.bd" FileRelPathName="ip/gameslab_processing_system7_0_0/gameslab_processing_system7_0_0.xci">
-          <Proxy FileSetName="gameslab_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="gameslab.bd" FileRelPathName="ip/gameslab_gslcd_0_2/gameslab_gslcd_0_2.xci">
           <Proxy FileSetName="gameslab_gslcd_0_2"/>
         </CompFileExtendedInfo>
@@ -104,12 +102,6 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="gameslab_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/gameslab_processing_system7_0_0">
-      <Config>
-        <Option Name="TopModule" Val="gameslab_processing_system7_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="gameslab_gslcd_0_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/gameslab_gslcd_0_2">
       <Config>
         <Option Name="TopModule" Val="gameslab_gslcd_0_2"/>
@@ -148,17 +140,6 @@
       <ReportStrategy/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="gameslab_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="gameslab_processing_system7_0_0" Part="xc7z010clg400-1" ConstrsSet="gameslab_processing_system7_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/gameslab_processing_system7_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="gameslab_gslcd_0_2_synth_1" Type="Ft3:Synth" SrcSet="gameslab_gslcd_0_2" Part="xc7z010clg400-1" ConstrsSet="gameslab_gslcd_0_2" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/gameslab_gslcd_0_2_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
@@ -184,24 +165,6 @@
         <Step Id="write_bitstream"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="gameslab_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="gameslab_processing_system7_0_0" Description="Default settings for Implementation." SynthRun="gameslab_processing_system7_0_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
       <ReportStrategy/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>

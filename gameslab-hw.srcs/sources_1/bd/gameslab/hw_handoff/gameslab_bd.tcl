@@ -165,6 +165,12 @@ proc create_root_design { parentCell } {
   set LCD_HSYNC [ create_bd_port -dir O LCD_HSYNC ]
   set LCD_VSYNC [ create_bd_port -dir O LCD_VSYNC ]
 
+  # Create instance: axi_interconnect_0, and set properties
+  set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
+  set_property -dict [ list \
+CONFIG.NUM_MI {1} \
+ ] $axi_interconnect_0
+
   # Create instance: gslcd_0, and set properties
   set gslcd_0 [ create_bd_cell -type ip -vlnv user.org:user:gslcd:1.0 gslcd_0 ]
   set_property -dict [ list \
@@ -174,6 +180,9 @@ CONFIG.C_M00_AXI_BUSER_WIDTH {1} \
 CONFIG.C_M00_AXI_RUSER_WIDTH {1} \
 CONFIG.C_M00_AXI_WUSER_WIDTH {1} \
  ] $gslcd_0
+
+  # Create instance: ila_0, and set properties
+  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
 
   # Create instance: lcd_dim, and set properties
   set lcd_dim [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 lcd_dim ]
@@ -300,6 +309,7 @@ CONFIG.PCW_SD0_GRP_CD_IO {MIO 47} \
 CONFIG.PCW_SD0_GRP_WP_ENABLE {1} \
 CONFIG.PCW_SD0_PERIPHERAL_ENABLE {1} \
 CONFIG.PCW_SDIO_PERIPHERAL_FREQMHZ {50} \
+CONFIG.PCW_S_AXI_HP0_DATA_WIDTH {32} \
 CONFIG.PCW_TTC0_PERIPHERAL_ENABLE {0} \
 CONFIG.PCW_UART1_PERIPHERAL_ENABLE {1} \
 CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY0 {0.176} \
@@ -319,7 +329,8 @@ CONFIG.PCW_USB0_PERIPHERAL_ENABLE {1} \
 CONFIG.PCW_USB0_RESET_ENABLE {1} \
 CONFIG.PCW_USB0_RESET_IO {MIO 46} \
 CONFIG.PCW_USE_M_AXI_GP0 {1} \
-CONFIG.PCW_USE_S_AXI_GP0 {0} \
+CONFIG.PCW_USE_S_AXI_GP0 {1} \
+CONFIG.PCW_USE_S_AXI_HP0 {0} \
  ] $processing_system7_0
 
   # Create instance: ps7_0_axi_periph, and set properties
@@ -332,6 +343,9 @@ CONFIG.NUM_MI {1} \
   set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
 
   # Create interface connections
+  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_GP0]
+  connect_bd_intf_net -intf_net gslcd_0_m00_axi [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins gslcd_0/m00_axi]
+connect_bd_intf_net -intf_net [get_bd_intf_nets gslcd_0_m00_axi] [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins ila_0/SLOT_0_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
@@ -343,11 +357,11 @@ CONFIG.NUM_MI {1} \
   connect_bd_net -net gslcd_0_LCD_HSYNC [get_bd_ports LCD_HSYNC] [get_bd_pins gslcd_0/LCD_HSYNC]
   connect_bd_net -net gslcd_0_LCD_VSYNC [get_bd_ports LCD_VSYNC] [get_bd_pins gslcd_0/LCD_VSYNC]
   connect_bd_net -net lcd_dim_dout [get_bd_ports LCD_DIM] [get_bd_pins lcd_dim/dout]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins gslcd_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins gslcd_0/m00_axi_aclk] [get_bd_pins gslcd_0/s00_axi_aclk] [get_bd_pins ila_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_ports LCD_CLK] [get_bd_pins gslcd_0/LCD_PCLK] [get_bd_pins processing_system7_0/FCLK_CLK1]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins gslcd_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins gslcd_0/m00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins gslcd_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
 
   # Create address segments
   create_bd_addr_seg -range 0x00001000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs gslcd_0/s00_axi/reg0] SEG_gslcd_0_reg0

@@ -1,0 +1,1 @@
+-wto "9ca38e96aafc4caaac3f4f822a332995" --debug "typical" --relax --mt "8" --maxdelay -L "xil_defaultlib" -L "simprims_ver" -L "secureip" --snapshot "gslcd_v1_0_tb_time_synth" -transport_int_delays -pulse_r "0" -pulse_int_r "0" -pulse_e "0" -pulse_int_e "0" "xil_defaultlib.gslcd_v1_0_tb" "xil_defaultlib.glbl" -log "elaborate.log" 

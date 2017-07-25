@@ -3,6 +3,8 @@
 # 
 
 set_param xicom.use_bs_reader 1
+set_param tcl.collectionResultDisplayLimit 0
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7z010clg400-1
 
@@ -20,6 +22,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   /home/craigjb/Projects/ip_repo/gslcd_1.0/hdl/gslcd_v1_0_M00_AXI.v
   /home/craigjb/Projects/ip_repo/gslcd_1.0/hdl/gslcd_v1_0_S00_AXI.v
+  /home/craigjb/Projects/ip_repo/gslcd_1.0/hdl/gslcd_v1_0_fifo_32to24.v
   /home/craigjb/Projects/ip_repo/gslcd_1.0/hdl/gslcd_v1_0_timing.v
   /home/craigjb/Projects/ip_repo/gslcd_1.0/hdl/gslcd_v1_0.v
 }

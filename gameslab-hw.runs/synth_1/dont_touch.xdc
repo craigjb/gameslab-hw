@@ -21,6 +21,15 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==gameslab_ps7_0_
 # IP: bd/gameslab/ip/gameslab_rst_ps7_0_100M_0/gameslab_rst_ps7_0_100M_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==gameslab_rst_ps7_0_100M_0 || ORIG_REF_NAME==gameslab_rst_ps7_0_100M_0}]
 
+# IP: bd/gameslab/ip/gameslab_axi_interconnect_0_0/gameslab_axi_interconnect_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==gameslab_axi_interconnect_0_0 || ORIG_REF_NAME==gameslab_axi_interconnect_0_0}]
+
+# IP: bd/gameslab/ip/gameslab_ila_0_0/gameslab_ila_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==gameslab_ila_0_0 || ORIG_REF_NAME==gameslab_ila_0_0}]
+
+# IP: bd/gameslab/ip/gameslab_auto_pc_1/gameslab_auto_pc_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==gameslab_auto_pc_1 || ORIG_REF_NAME==gameslab_auto_pc_1}]
+
 # IP: bd/gameslab/ip/gameslab_auto_pc_0/gameslab_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==gameslab_auto_pc_0 || ORIG_REF_NAME==gameslab_auto_pc_0}]
 

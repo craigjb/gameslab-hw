@@ -1,0 +1,5 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../gameslab-hw.ip_user_files/bd/gameslab/ip/gameslab_rst_ps7_0_100M_0/sim/gameslab_rst_ps7_0_100M_0.vhd"
+
+# Do not sort compile order
+nosort

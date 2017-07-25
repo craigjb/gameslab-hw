@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
+# 
+# Start of session at: Tue Jul 25 11:11:01 2017
+# Process ID: 8728
+# Current directory: /home/craigjb/Projects/gameslab-hw/gameslab-hw.sdk/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /home/craigjb/Projects/gameslab-hw/gameslab-hw.sdk/webtalk/webtalk.log
+# Journal file: /home/craigjb/Projects/gameslab-hw/gameslab-hw.sdk/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl
