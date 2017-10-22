@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:gslcd:1.0
-// IP Revision: 53
+// IP Revision: 72
 
 `timescale 1ns/1ps
 
@@ -263,18 +263,6 @@ input wire m00_axi_rvalid;
 output wire m00_axi_rready;
 
   gslcd_v1_0 #(
-    .C_FRAME_WIDTH(800),
-    .C_FRAME_HEIGHT(480),
-    .C_LCD_LINE_REG_WIDTH(10),
-    .C_LCD_PIXEL_REG_WIDTH(10),
-    .C_LCD_LINES(525),
-    .C_LCD_VSYNC_START(13),
-    .C_LCD_VSYNC_END(16),
-    .C_LCD_VACTIVE_START(45),
-    .C_LCD_HPIXELS(928),
-    .C_LCD_HSYNC_START(40),
-    .C_LCD_HSYNC_END(88),
-    .C_LCD_HACTIVE_START(128),
     .C_S00_AXI_DATA_WIDTH(32),
     .C_S00_AXI_ADDR_WIDTH(4),
     .C_M00_AXI_BURST_LEN(16),
@@ -285,7 +273,9 @@ output wire m00_axi_rready;
     .C_M00_AXI_ARUSER_WIDTH(1),
     .C_M00_AXI_WUSER_WIDTH(1),
     .C_M00_AXI_RUSER_WIDTH(1),
-    .C_M00_AXI_BUSER_WIDTH(1)
+    .C_M00_AXI_BUSER_WIDTH(1),
+    .C_S00_AXI_BASEADDR(32'H43C00000),
+    .C_S00_AXI_HIGHADDR(32'H43C00FFF)
   ) inst (
     .LCD_PCLK(LCD_PCLK),
     .LCD_DEN(LCD_DEN),

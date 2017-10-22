@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1500789961">
-  <File Type="PA-TCL" Name="gslcd_v1_0.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="gslcd_v1_0_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="gslcd_v1_0_utilization_synth.rpt"/>
   <File Type="RDS-RDS" Name="gslcd_v1_0.vds"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="gslcd_v1_0_timing_summary_synth.rpt"/>
   <File Type="VDS-TIMING-PB" Name="gslcd_v1_0_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="gslcd_v1_0.tcl"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="gslcd_v1_0_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="gslcd_v1_0.dcp"/>
   <File Type="RDS-UTIL-PB" Name="gslcd_v1_0_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="gslcd_v1_0_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="gslcd_v1_0_drc_synth.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../../ip_repo/gslcd_1.0/hdl/gslcd_v1_0_M00_AXI.v">

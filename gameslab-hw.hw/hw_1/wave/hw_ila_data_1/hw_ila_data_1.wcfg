@@ -10,16 +10,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="67839fs"></ZoomEndTime>
+      <ZoomEndTime time="1047897fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="244"></NameColumnWidth>
-      <ValueColumnWidth column_width="141"></ValueColumnWidth>
+      <ValueColumnWidth column_width="137"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="8" />
-   <wave_markers>
-   </wave_markers>
    <wvobject type="logic" fp_name="gameslab_i/gslcd_0_m00_axi_ARVALID">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">gameslab_i/gslcd_0_m00_axi_ARVALID</obj_property>

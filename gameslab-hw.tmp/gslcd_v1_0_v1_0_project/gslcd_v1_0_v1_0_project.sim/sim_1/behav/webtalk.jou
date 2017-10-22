@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Sun Oct 22 11:30:56 2017
+# Process ID: 92637
+# Current directory: /home/craigjb/Projects/gameslab-hw/gameslab-hw.tmp/gslcd_v1_0_v1_0_project/gslcd_v1_0_v1_0_project.sim/sim_1/behav
+# Command line: wbtcv -mode batch -source /home/craigjb/Projects/gameslab-hw/gameslab-hw.tmp/gslcd_v1_0_v1_0_project/gslcd_v1_0_v1_0_project.sim/sim_1/behav/xsim.dir/gslcd_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/craigjb/Projects/gameslab-hw/gameslab-hw.tmp/gslcd_v1_0_v1_0_project/gslcd_v1_0_v1_0_project.sim/sim_1/behav/webtalk.log
+# Journal file: /home/craigjb/Projects/gameslab-hw/gameslab-hw.tmp/gslcd_v1_0_v1_0_project/gslcd_v1_0_v1_0_project.sim/sim_1/behav/webtalk.jou
+#-----------------------------------------------------------
+source /home/craigjb/Projects/gameslab-hw/gameslab-hw.tmp/gslcd_v1_0_v1_0_project/gslcd_v1_0_v1_0_project.sim/sim_1/behav/xsim.dir/gslcd_tb_behav/webtalk/xsim_webtalk.tcl -notrace
