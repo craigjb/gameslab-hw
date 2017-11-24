@@ -3,35 +3,40 @@
 #  -string -flagsOSRD
 preplace port DDR -pg 1 -y -610 -defaultsOSRD
 preplace port LCD_VSYNC -pg 1 -y -300 -defaultsOSRD
+preplace port SDIO_0 -pg 1 -y -850 -defaultsOSRD
 preplace port LCD_HSYNC -pg 1 -y -280 -defaultsOSRD
 preplace port LCD_CLK -pg 1 -y -410 -defaultsOSRD
+preplace port IIC_0 -pg 1 -y -880 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y -540 -defaultsOSRD
 preplace port LCD_DEN -pg 1 -y -320 -defaultsOSRD
 preplace portBus LCD_DIM -pg 1 -y -10 -defaultsOSRD
+preplace portBus TSINT -pg 1 -y -900 -defaultsOSRD
 preplace portBus LCD_DATA -pg 1 -y -260 -defaultsOSRD
-preplace inst gslcd_0 -pg 1 -lvl 2 -y -20 -defaultsOSRD
-preplace inst lcd_dim -pg 1 -lvl 2 -y 120 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 2 -y -490 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y -240 -defaultsOSRD
+preplace inst gslcd_0 -pg 1 -lvl 2 -y 0 -defaultsOSRD
+preplace inst lcd_dim -pg 1 -lvl 2 -y 140 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 2 -y -470 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y -220 -defaultsOSRD
 preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -y -410 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 2 -y -840 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 2 1 800J
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 320 -700 760
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 1 310J
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 3 -80 -650 NJ -650 750
-preplace netloc lcd_dim_dout 1 2 1 800J
-preplace netloc gslcd_0_LCD_HSYNC 1 2 1 780J
-preplace netloc gslcd_0_LCD_VSYNC 1 2 1 770J
-preplace netloc gslcd_0_LCD_DATA 1 2 1 790J
+preplace inst processing_system7_0 -pg 1 -lvl 2 -y -830 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 2 1 770J
+preplace netloc GPIO_I_1 1 0 3 -110J -1020 NJ -1020 730
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 310 -970 720
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 1 290J
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 3 -110 -630 260J -690 720
+preplace netloc lcd_dim_dout 1 2 1 790J
+preplace netloc processing_system7_0_IIC_0 1 2 1 780
+preplace netloc gslcd_0_LCD_HSYNC 1 2 1 760J
+preplace netloc gslcd_0_LCD_VSYNC 1 2 1 750J
+preplace netloc gslcd_0_LCD_DATA 1 2 1 780J
 preplace netloc processing_system7_0_FIXED_IO 1 2 1 790J
-preplace netloc gslcd_0_m00_axi 1 1 2 340 -610 750
-preplace netloc axi_interconnect_0_M00_AXI 1 1 2 320 -710 740
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 -70 -500 290 -720 740
-preplace netloc ps7_0_axi_periph_M00_AXI 1 1 2 340 -360 740J
-preplace netloc gslcd_0_LCD_DEN 1 2 1 760
-preplace netloc processing_system7_0_FCLK_CLK1 1 1 2 330 -370 780
-preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 1 1 300
-levelinfo -pg 1 -100 110 540 1120 -top -1240 -bot 1120
+preplace netloc gslcd_0_m00_axi 1 1 2 320 -590 730
+preplace netloc axi_interconnect_0_M00_AXI 1 1 2 320 -980 750
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 -100 -500 270 -1000 740
+preplace netloc ps7_0_axi_periph_M00_AXI 1 1 2 320 -340 720J
+preplace netloc gslcd_0_LCD_DEN 1 2 1 740
+preplace netloc processing_system7_0_FCLK_CLK1 1 1 2 300 -610 760
+preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 1 1 280
+levelinfo -pg 1 -130 80 520 810 -top -1240 -bot 1120
 ",
 }
 {

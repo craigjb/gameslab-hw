@@ -5,13 +5,13 @@
 #define XPAR_CPU_ID 0
 
 /* Definitions for peripheral PS7_CORTEXA9_0 */
-#define XPAR_PS7_CORTEXA9_0_CPU_CLK_FREQ_HZ 650000000
+#define XPAR_PS7_CORTEXA9_0_CPU_CLK_FREQ_HZ 300000000
 
 
 /******************************************************************/
 
 /* Canonical definitions for peripheral PS7_CORTEXA9_0 */
-#define XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ 650000000
+#define XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ 300000000
 
 
 /******************************************************************/
@@ -82,8 +82,8 @@
 
 
 /* Definitions for peripheral GSLCD_0 */
-#define XPAR_GSLCD_0_S00_AXI_BASEADDR 0x43C00000
-#define XPAR_GSLCD_0_S00_AXI_HIGHADDR 0x43C0FFFF
+#define XPAR_GSLCD_0_BASEADDR 0x43C00000
+#define XPAR_GSLCD_0_HIGHADDR 0x43C00FFF
 
 
 /* Definitions for peripheral PS7_AFI_0 */
@@ -199,6 +199,27 @@
 
 /******************************************************************/
 
+/* Definitions for driver IICPS */
+#define XPAR_XIICPS_NUM_INSTANCES 1
+
+/* Definitions for peripheral PS7_I2C_0 */
+#define XPAR_PS7_I2C_0_DEVICE_ID 0
+#define XPAR_PS7_I2C_0_BASEADDR 0xE0004000
+#define XPAR_PS7_I2C_0_HIGHADDR 0xE0004FFF
+#define XPAR_PS7_I2C_0_I2C_CLK_FREQ_HZ 50000000
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral PS7_I2C_0 */
+#define XPAR_XIICPS_0_DEVICE_ID XPAR_PS7_I2C_0_DEVICE_ID
+#define XPAR_XIICPS_0_BASEADDR 0xE0004000
+#define XPAR_XIICPS_0_HIGHADDR 0xE0004FFF
+#define XPAR_XIICPS_0_I2C_CLK_FREQ_HZ 50000000
+
+
+/******************************************************************/
+
 /* Definitions for driver QSPIPS */
 #define XPAR_XQSPIPS_NUM_INSTANCES 1
 
@@ -290,7 +311,7 @@
 #define XPAR_PS7_SD_0_HIGHADDR 0xE0100FFF
 #define XPAR_PS7_SD_0_SDIO_CLK_FREQ_HZ 50000000
 #define XPAR_PS7_SD_0_HAS_CD 1
-#define XPAR_PS7_SD_0_HAS_WP 1
+#define XPAR_PS7_SD_0_HAS_WP 0
 #define XPAR_PS7_SD_0_BUS_WIDTH 0
 #define XPAR_PS7_SD_0_MIO_BANK 0
 #define XPAR_PS7_SD_0_HAS_EMIO 0
@@ -304,7 +325,7 @@
 #define XPAR_XSDPS_0_HIGHADDR 0xE0100FFF
 #define XPAR_XSDPS_0_SDIO_CLK_FREQ_HZ 50000000
 #define XPAR_XSDPS_0_HAS_CD 1
-#define XPAR_XSDPS_0_HAS_WP 1
+#define XPAR_XSDPS_0_HAS_WP 0
 #define XPAR_XSDPS_0_BUS_WIDTH 0
 #define XPAR_XSDPS_0_MIO_BANK 0
 #define XPAR_XSDPS_0_HAS_EMIO 0

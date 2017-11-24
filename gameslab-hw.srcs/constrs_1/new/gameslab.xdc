@@ -1,4 +1,4 @@
- set_property -dict { PACKAGE_PIN W20    IOSTANDARD LVCMOS33} [get_ports {LCD_CLK}]
+set_property -dict { PACKAGE_PIN W20    IOSTANDARD LVCMOS33} [get_ports {LCD_CLK}]
 set_property -dict { PACKAGE_PIN T20    IOSTANDARD LVCMOS33} [get_ports {LCD_DEN}]
 set_property -dict { PACKAGE_PIN U20    IOSTANDARD LVCMOS33} [get_ports {LCD_VSYNC}]
 set_property -dict { PACKAGE_PIN V20    IOSTANDARD LVCMOS33} [get_ports {LCD_HSYNC}]
@@ -30,3 +30,7 @@ set_property -dict { PACKAGE_PIN W16    IOSTANDARD LVCMOS33} [get_ports {LCD_DAT
 set_property -dict { PACKAGE_PIN U17    IOSTANDARD LVCMOS33} [get_ports {LCD_DATA[21]}]
 set_property -dict { PACKAGE_PIN V12    IOSTANDARD LVCMOS33} [get_ports {LCD_DATA[22]}]
 set_property -dict { PACKAGE_PIN V13    IOSTANDARD LVCMOS33} [get_ports {LCD_DATA[23]}]
+
+set_property -dict { PACKAGE_PIN W18    IOSTANDARD LVCMOS33    PULLUP true } [get_ports iic_0_scl_io]
+set_property -dict { PACKAGE_PIN Y19    IOSTANDARD LVCMOS33    PULLUP true } [get_ports iic_0_sda_io]
+set_property -dict { PACKAGE_PIN W19    IOSTANDARD LVCMOS33} [get_ports {TSINT}]

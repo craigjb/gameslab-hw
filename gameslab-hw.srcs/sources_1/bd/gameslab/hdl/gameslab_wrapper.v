@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-//Date        : Sun Oct 22 14:26:00 2017
+//Date        : Sun Oct 29 22:23:42 2017
 //Host        : gameslab-dev running 64-bit Debian GNU/Linux 9.0 (stretch)
 //Command     : generate_target gameslab_wrapper.bd
 //Design      : gameslab_wrapper
@@ -36,7 +36,10 @@ module gameslab_wrapper
     LCD_DEN,
     LCD_DIM,
     LCD_HSYNC,
-    LCD_VSYNC);
+    LCD_VSYNC,
+    TSINT,
+    iic_0_scl_io,
+    iic_0_sda_io);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -64,6 +67,9 @@ module gameslab_wrapper
   output [0:0]LCD_DIM;
   output LCD_HSYNC;
   output LCD_VSYNC;
+  input [0:0]TSINT;
+  inout iic_0_scl_io;
+  inout iic_0_sda_io;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -92,6 +98,15 @@ module gameslab_wrapper
   wire [0:0]LCD_DIM;
   wire LCD_HSYNC;
   wire LCD_VSYNC;
+  wire [0:0]TSINT;
+  wire iic_0_scl_i;
+  wire iic_0_scl_io;
+  wire iic_0_scl_o;
+  wire iic_0_scl_t;
+  wire iic_0_sda_i;
+  wire iic_0_sda_io;
+  wire iic_0_sda_o;
+  wire iic_0_sda_t;
 
   gameslab gameslab_i
        (.DDR_addr(DDR_addr),
@@ -115,10 +130,27 @@ module gameslab_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .IIC_0_scl_i(iic_0_scl_i),
+        .IIC_0_scl_o(iic_0_scl_o),
+        .IIC_0_scl_t(iic_0_scl_t),
+        .IIC_0_sda_i(iic_0_sda_i),
+        .IIC_0_sda_o(iic_0_sda_o),
+        .IIC_0_sda_t(iic_0_sda_t),
         .LCD_CLK(LCD_CLK),
         .LCD_DATA(LCD_DATA),
         .LCD_DEN(LCD_DEN),
         .LCD_DIM(LCD_DIM),
         .LCD_HSYNC(LCD_HSYNC),
-        .LCD_VSYNC(LCD_VSYNC));
+        .LCD_VSYNC(LCD_VSYNC),
+        .TSINT(TSINT));
+  IOBUF iic_0_scl_iobuf
+       (.I(iic_0_scl_o),
+        .IO(iic_0_scl_io),
+        .O(iic_0_scl_i),
+        .T(iic_0_scl_t));
+  IOBUF iic_0_sda_iobuf
+       (.I(iic_0_sda_o),
+        .IO(iic_0_sda_io),
+        .O(iic_0_sda_i),
+        .T(iic_0_sda_t));
 endmodule

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date         : Sun Oct 22 14:46:35 2017
+| Date         : Sun Oct 29 17:36:13 2017
 | Host         : gameslab-dev running 64-bit Debian GNU/Linux 9.0 (stretch)
 | Command      : report_methodology -file gameslab_wrapper_methodology_drc_routed.rpt -rpx gameslab_wrapper_methodology_drc_routed.rpx
 | Design       : gameslab_wrapper
@@ -57,122 +57,122 @@ Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.649 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[2]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.668 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[10]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[10]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -1.693 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[10]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[10]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.809 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[10]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[10]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -1.728 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[4]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.826 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[7]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[7]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -1.749 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[0]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.842 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[1]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -1.826 ns between gameslab_i/gslcd_0/inst/gslcd_impl/ctrlReg_reg[0]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/bufferCC_6/buffers_0_reg/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.846 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[2]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -1.829 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[3]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[3]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.857 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[0]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -1.849 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[5]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[5]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.892 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[5]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[5]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -1.857 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[9]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[9]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.921 ns between gameslab_i/gslcd_0/inst/gslcd_impl/ctrlReg_reg[0]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/bufferCC_6/buffers_0_reg/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -1.868 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[5]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[5]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.949 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[2]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[2]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -1.877 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[1]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[1]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.977 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[1]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[1]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -1.894 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[3]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[3]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.025 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[0]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[0]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -1.897 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[2]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[2]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.044 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[3]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[3]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#13 Warning
 Large setup violation  
-There is a large setup violation of -1.910 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[7]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[7]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.047 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[8]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#14 Warning
 Large setup violation  
-There is a large setup violation of -1.917 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[0]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[0]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.049 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[4]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#15 Warning
 Large setup violation  
-There is a large setup violation of -1.937 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[10]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[10]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.054 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[9]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[9]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#16 Warning
 Large setup violation  
-There is a large setup violation of -1.941 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[8]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.056 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[8]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[8]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#17 Warning
 Large setup violation  
-There is a large setup violation of -1.963 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[8]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[8]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.073 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[6]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[6]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#18 Warning
 Large setup violation  
-There is a large setup violation of -1.977 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[7]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[7]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.077 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[5]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[5]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#19 Warning
 Large setup violation  
-There is a large setup violation of -1.981 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[6]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[6]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.094 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[7]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[7]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#20 Warning
 Large setup violation  
-There is a large setup violation of -1.989 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[1]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.114 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[4]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[4]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#21 Warning
 Large setup violation  
-There is a large setup violation of -1.990 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[4]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[4]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.117 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[6]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[6]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#22 Warning
 Large setup violation  
-There is a large setup violation of -1.999 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/pushCC_pushPtrGray_reg[6]/C (clocked by clk_fpga_0) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_0_reg[6]/D (clocked by clk_fpga_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.133 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[3]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[3]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#23 Warning
 Large setup violation  
-There is a large setup violation of -2.019 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[9]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.149 ns between gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/popCC_popPtrGray_reg[9]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_5/buffers_0_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#24 Warning
 Large setup violation  
-There is a large setup violation of -2.727 ns between gameslab_i/gslcd_0/inst/gslcd_impl/pixelClockArea_timing/pixel_reg[3]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/bufferCC_7/buffers_0_reg/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.520 ns between gameslab_i/gslcd_0/inst/gslcd_impl/pixelClockArea_timing/line_reg[8]/C (clocked by clk_fpga_1) and gameslab_i/gslcd_0/inst/gslcd_impl/bufferCC_7/buffers_0_reg/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

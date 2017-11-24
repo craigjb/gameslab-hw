@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date                      : Sun Oct 22 14:27:43 2017
+| Date                      : Sun Oct 29 17:29:45 2017
 | Host                      : gameslab-dev running 64-bit Debian GNU/Linux 9.0 (stretch)
 | Command                   : report_io -file gameslab_wrapper_io_placed.rpt
 | Design                    : gameslab_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           159 |
+|           162 |
 +---------------+
 
 
@@ -412,8 +412,8 @@ Table of Contents
 | W15        | LCD_DATA[4]       | High Range | IO_L10N_T1_34           | OUTPUT        | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | W16        | LCD_DATA[20]      | High Range | IO_L18N_T2_34           | OUTPUT        | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | W17        |                   | High Range | VCCO_34                 | VCCO          |                   |      34 |            |      |                     |                      |    3.30 |            |           |          |      |                  |
-| W18        |                   | High Range | IO_L22P_T3_34           | User IO       |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |
-| W19        |                   | High Range | IO_L22N_T3_34           | User IO       |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |
+| W18        | iic_0_scl_io      | High Range | IO_L22P_T3_34           | BIDIR         | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      | PULLUP    |          |      | NONE             |
+| W19        | TSINT[0]          | High Range | IO_L22N_T3_34           | INPUT         | LVCMOS33          |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | W20        | LCD_CLK           | High Range | IO_L16N_T2_34           | OUTPUT        | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | Y1         | DDR_dm[3]         |            | PS_DDR_DM3_502          | BIDIR         | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |
 | Y2         | DDR_dq[28]        |            | PS_DDR_DQ28_502         | BIDIR         | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |
@@ -433,7 +433,7 @@ Table of Contents
 | Y16        |                   | High Range | IO_L7P_T1_34            | User IO       |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |
 | Y17        | LCD_DATA[17]      | High Range | IO_L7N_T1_34            | OUTPUT        | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | Y18        | LCD_DIM[0]        | High Range | IO_L17P_T2_34           | OUTPUT        | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
-| Y19        |                   | High Range | IO_L17N_T2_34           | User IO       |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |
+| Y19        | iic_0_sda_io      | High Range | IO_L17N_T2_34           | BIDIR         | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      | PULLUP    |          |      | NONE             |
 | Y20        |                   | High Range | VCCO_34                 | VCCO          |                   |      34 |            |      |                     |                      |    3.30 |            |           |          |      |                  |
 +------------+-------------------+------------+-------------------------+---------------+-------------------+---------+------------+------+---------------------+----------------------+---------+------------+-----------+----------+------+------------------+
 * Default value

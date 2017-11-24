@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-//Date        : Sun Oct 22 14:02:20 2017
+//Date        : Sun Oct 29 22:23:42 2017
 //Host        : gameslab-dev running 64-bit Debian GNU/Linux 9.0 (stretch)
 //Command     : generate_target gameslab.bd
 //Design      : gameslab
@@ -32,12 +32,19 @@ module gameslab
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    IIC_0_scl_i,
+    IIC_0_scl_o,
+    IIC_0_scl_t,
+    IIC_0_sda_i,
+    IIC_0_sda_o,
+    IIC_0_sda_t,
     LCD_CLK,
     LCD_DATA,
     LCD_DEN,
     LCD_DIM,
     LCD_HSYNC,
-    LCD_VSYNC);
+    LCD_VSYNC,
+    TSINT);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -59,13 +66,21 @@ module gameslab
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  input IIC_0_scl_i;
+  output IIC_0_scl_o;
+  output IIC_0_scl_t;
+  input IIC_0_sda_i;
+  output IIC_0_sda_o;
+  output IIC_0_sda_t;
   output LCD_CLK;
   output [23:0]LCD_DATA;
   output LCD_DEN;
   output [0:0]LCD_DIM;
   output LCD_HSYNC;
   output LCD_VSYNC;
+  input [0:0]TSINT;
 
+  wire [0:0]GPIO_I_1;
   wire [31:0]axi_interconnect_0_M00_AXI_ARADDR;
   wire [1:0]axi_interconnect_0_M00_AXI_ARBURST;
   wire [3:0]axi_interconnect_0_M00_AXI_ARCACHE;
@@ -174,6 +189,12 @@ module gameslab
   wire processing_system7_0_FIXED_IO_PS_CLK;
   wire processing_system7_0_FIXED_IO_PS_PORB;
   wire processing_system7_0_FIXED_IO_PS_SRSTB;
+  wire processing_system7_0_IIC_0_SCL_I;
+  wire processing_system7_0_IIC_0_SCL_O;
+  wire processing_system7_0_IIC_0_SCL_T;
+  wire processing_system7_0_IIC_0_SDA_I;
+  wire processing_system7_0_IIC_0_SDA_O;
+  wire processing_system7_0_IIC_0_SDA_T;
   wire [31:0]processing_system7_0_M_AXI_GP0_ARADDR;
   wire [1:0]processing_system7_0_M_AXI_GP0_ARBURST;
   wire [3:0]processing_system7_0_M_AXI_GP0_ARCACHE;
@@ -234,12 +255,19 @@ module gameslab
   wire [0:0]rst_ps7_0_100M_interconnect_aresetn;
   wire [0:0]rst_ps7_0_100M_peripheral_aresetn;
 
+  assign GPIO_I_1 = TSINT[0];
+  assign IIC_0_scl_o = processing_system7_0_IIC_0_SCL_O;
+  assign IIC_0_scl_t = processing_system7_0_IIC_0_SCL_T;
+  assign IIC_0_sda_o = processing_system7_0_IIC_0_SDA_O;
+  assign IIC_0_sda_t = processing_system7_0_IIC_0_SDA_T;
   assign LCD_CLK = processing_system7_0_FCLK_CLK1;
   assign LCD_DATA[23:0] = gslcd_0_LCD_DATA;
   assign LCD_DEN = gslcd_0_LCD_DEN;
   assign LCD_DIM[0] = lcd_dim_dout;
   assign LCD_HSYNC = gslcd_0_LCD_HSYNC;
   assign LCD_VSYNC = gslcd_0_LCD_VSYNC;
+  assign processing_system7_0_IIC_0_SCL_I = IIC_0_scl_i;
+  assign processing_system7_0_IIC_0_SDA_I = IIC_0_sda_i;
   gameslab_axi_interconnect_0_0 axi_interconnect_0
        (.ACLK(processing_system7_0_FCLK_CLK0),
         .ARESETN(rst_ps7_0_100M_interconnect_aresetn),
@@ -420,6 +448,13 @@ module gameslab
         .FCLK_CLK0(processing_system7_0_FCLK_CLK0),
         .FCLK_CLK1(processing_system7_0_FCLK_CLK1),
         .FCLK_RESET0_N(processing_system7_0_FCLK_RESET0_N),
+        .GPIO_I(GPIO_I_1),
+        .I2C0_SCL_I(processing_system7_0_IIC_0_SCL_I),
+        .I2C0_SCL_O(processing_system7_0_IIC_0_SCL_O),
+        .I2C0_SCL_T(processing_system7_0_IIC_0_SCL_T),
+        .I2C0_SDA_I(processing_system7_0_IIC_0_SDA_I),
+        .I2C0_SDA_O(processing_system7_0_IIC_0_SDA_O),
+        .I2C0_SDA_T(processing_system7_0_IIC_0_SDA_T),
         .MIO(FIXED_IO_mio[53:0]),
         .M_AXI_GP0_ACLK(processing_system7_0_FCLK_CLK0),
         .M_AXI_GP0_ARADDR(processing_system7_0_M_AXI_GP0_ARADDR),
@@ -463,7 +498,6 @@ module gameslab
         .PS_CLK(FIXED_IO_ps_clk),
         .PS_PORB(FIXED_IO_ps_porb),
         .PS_SRSTB(FIXED_IO_ps_srstb),
-        .SDIO0_WP(1'b0),
         .S_AXI_GP0_ACLK(processing_system7_0_FCLK_CLK0),
         .S_AXI_GP0_ARADDR(axi_interconnect_0_M00_AXI_ARADDR),
         .S_AXI_GP0_ARBURST(axi_interconnect_0_M00_AXI_ARBURST),
@@ -713,7 +747,7 @@ module gameslab_axi_interconnect_0_0
   input [3:0]S00_AXI_arcache;
   input [0:0]S00_AXI_arid;
   input [7:0]S00_AXI_arlen;
-  input [0:0]S00_AXI_arlock;
+  input S00_AXI_arlock;
   input [2:0]S00_AXI_arprot;
   input [3:0]S00_AXI_arqos;
   output S00_AXI_arready;
@@ -725,7 +759,7 @@ module gameslab_axi_interconnect_0_0
   input [3:0]S00_AXI_awcache;
   input [0:0]S00_AXI_awid;
   input [7:0]S00_AXI_awlen;
-  input [0:0]S00_AXI_awlock;
+  input S00_AXI_awlock;
   input [2:0]S00_AXI_awprot;
   input [3:0]S00_AXI_awqos;
   output S00_AXI_awready;
@@ -759,7 +793,7 @@ module gameslab_axi_interconnect_0_0
   wire [3:0]axi_interconnect_0_to_s00_couplers_ARCACHE;
   wire [0:0]axi_interconnect_0_to_s00_couplers_ARID;
   wire [7:0]axi_interconnect_0_to_s00_couplers_ARLEN;
-  wire [0:0]axi_interconnect_0_to_s00_couplers_ARLOCK;
+  wire axi_interconnect_0_to_s00_couplers_ARLOCK;
   wire [2:0]axi_interconnect_0_to_s00_couplers_ARPROT;
   wire [3:0]axi_interconnect_0_to_s00_couplers_ARQOS;
   wire axi_interconnect_0_to_s00_couplers_ARREADY;
@@ -771,7 +805,7 @@ module gameslab_axi_interconnect_0_0
   wire [3:0]axi_interconnect_0_to_s00_couplers_AWCACHE;
   wire [0:0]axi_interconnect_0_to_s00_couplers_AWID;
   wire [7:0]axi_interconnect_0_to_s00_couplers_AWLEN;
-  wire [0:0]axi_interconnect_0_to_s00_couplers_AWLOCK;
+  wire axi_interconnect_0_to_s00_couplers_AWLOCK;
   wire [2:0]axi_interconnect_0_to_s00_couplers_AWPROT;
   wire [3:0]axi_interconnect_0_to_s00_couplers_AWQOS;
   wire axi_interconnect_0_to_s00_couplers_AWREADY;
@@ -882,7 +916,7 @@ module gameslab_axi_interconnect_0_0
   assign axi_interconnect_0_to_s00_couplers_ARCACHE = S00_AXI_arcache[3:0];
   assign axi_interconnect_0_to_s00_couplers_ARID = S00_AXI_arid[0];
   assign axi_interconnect_0_to_s00_couplers_ARLEN = S00_AXI_arlen[7:0];
-  assign axi_interconnect_0_to_s00_couplers_ARLOCK = S00_AXI_arlock[0];
+  assign axi_interconnect_0_to_s00_couplers_ARLOCK = S00_AXI_arlock;
   assign axi_interconnect_0_to_s00_couplers_ARPROT = S00_AXI_arprot[2:0];
   assign axi_interconnect_0_to_s00_couplers_ARQOS = S00_AXI_arqos[3:0];
   assign axi_interconnect_0_to_s00_couplers_ARSIZE = S00_AXI_arsize[2:0];
@@ -893,7 +927,7 @@ module gameslab_axi_interconnect_0_0
   assign axi_interconnect_0_to_s00_couplers_AWCACHE = S00_AXI_awcache[3:0];
   assign axi_interconnect_0_to_s00_couplers_AWID = S00_AXI_awid[0];
   assign axi_interconnect_0_to_s00_couplers_AWLEN = S00_AXI_awlen[7:0];
-  assign axi_interconnect_0_to_s00_couplers_AWLOCK = S00_AXI_awlock[0];
+  assign axi_interconnect_0_to_s00_couplers_AWLOCK = S00_AXI_awlock;
   assign axi_interconnect_0_to_s00_couplers_AWPROT = S00_AXI_awprot[2:0];
   assign axi_interconnect_0_to_s00_couplers_AWQOS = S00_AXI_awqos[3:0];
   assign axi_interconnect_0_to_s00_couplers_AWSIZE = S00_AXI_awsize[2:0];

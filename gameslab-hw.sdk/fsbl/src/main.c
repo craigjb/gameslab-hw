@@ -241,6 +241,8 @@ int main(void)
 	u32 HandoffAddress = 0;
 	u32 Status = XST_SUCCESS;
 
+	xil_printf("FSBL console test before DDR");
+
 	/*
 	 * PCW initialization for MIO,PLL,CLK and DDR
 	 */

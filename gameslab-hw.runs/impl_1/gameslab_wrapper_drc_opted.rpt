@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date         : Sun Oct 22 14:27:30 2017
+| Date         : Sun Oct 29 17:29:33 2017
 | Host         : gameslab-dev running 64-bit Debian GNU/Linux 9.0 (stretch)
 | Command      : report_drc -file gameslab_wrapper_drc_opted.rpt
 | Design       : gameslab_wrapper
@@ -116,17 +116,17 @@ Related violations: <none>
 
 REQP-1839#16 Warning
 RAMB36 async control check  
-The RAMB36E1 gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg has an input control pin gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg/ADDRBWRADDR[14] (net: gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/_36_1[9]) which is driven by a register (gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_1_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg has an input control pin gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg/ADDRBWRADDR[14] (net: gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/_36_1[9]) which is driven by a register (gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_1_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#17 Warning
 RAMB36 async control check  
-The RAMB36E1 gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg has an input control pin gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg/ADDRBWRADDR[14] (net: gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/_36_1[9]) which is driven by a register (gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_1_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg has an input control pin gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg/ADDRBWRADDR[14] (net: gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/_36_1[9]) which is driven by a register (gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_1_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#18 Warning
 RAMB36 async control check  
-The RAMB36E1 gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg has an input control pin gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg/ADDRBWRADDR[14] (net: gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/_36_1[9]) which is driven by a register (gameslab_i/gslcd_0/inst/gslcd_impl/pixelClockArea_timing/readEn_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg has an input control pin gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/ram_reg/ADDRBWRADDR[14] (net: gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/_36_1[9]) which is driven by a register (gameslab_i/gslcd_0/inst/gslcd_impl/fifo/fifo/bufferCC_6/buffers_1_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#19 Warning

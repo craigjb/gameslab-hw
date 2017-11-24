@@ -156,6 +156,8 @@ proc create_root_design { parentCell } {
   # Create interface ports
   set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
+  set IIC_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 IIC_0 ]
+  set SDIO_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:sdio_rtl:1.0 SDIO_0 ]
 
   # Create ports
   set LCD_CLK [ create_bd_port -dir O -type clk LCD_CLK ]
@@ -164,6 +166,7 @@ proc create_root_design { parentCell } {
   set LCD_DIM [ create_bd_port -dir O -from 0 -to 0 LCD_DIM ]
   set LCD_HSYNC [ create_bd_port -dir O LCD_HSYNC ]
   set LCD_VSYNC [ create_bd_port -dir O LCD_VSYNC ]
+  set TSINT [ create_bd_port -dir I -from 0 -to 0 TSINT ]
 
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
@@ -190,7 +193,7 @@ CONFIG.C_S00_AXI_HIGHADDR {0x43C00FFF} \
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
   set_property -dict [ list \
-CONFIG.PCW_APU_PERIPHERAL_FREQMHZ {650} \
+CONFIG.PCW_APU_PERIPHERAL_FREQMHZ {300} \
 CONFIG.PCW_CRYSTAL_PERIPHERAL_FREQMHZ {50.000000} \
 CONFIG.PCW_ENET0_ENET0_IO {<Select>} \
 CONFIG.PCW_ENET0_GRP_MDIO_ENABLE {0} \
@@ -203,7 +206,11 @@ CONFIG.PCW_FCLK0_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} \
 CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {32} \
+CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE {1} \
+CONFIG.PCW_GPIO_EMIO_GPIO_IO {1} \
 CONFIG.PCW_GPIO_MIO_GPIO_ENABLE {1} \
+CONFIG.PCW_I2C0_PERIPHERAL_ENABLE {1} \
+CONFIG.PCW_I2C1_PERIPHERAL_ENABLE {0} \
 CONFIG.PCW_MIO_0_PULLUP {enabled} \
 CONFIG.PCW_MIO_10_PULLUP {enabled} \
 CONFIG.PCW_MIO_11_PULLUP {enabled} \
@@ -306,7 +313,7 @@ CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {1} \
 CONFIG.PCW_QSPI_PERIPHERAL_ENABLE {1} \
 CONFIG.PCW_SD0_GRP_CD_ENABLE {1} \
 CONFIG.PCW_SD0_GRP_CD_IO {MIO 47} \
-CONFIG.PCW_SD0_GRP_WP_ENABLE {1} \
+CONFIG.PCW_SD0_GRP_WP_ENABLE {0} \
 CONFIG.PCW_SD0_PERIPHERAL_ENABLE {1} \
 CONFIG.PCW_SDIO_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_S_AXI_HP0_DATA_WIDTH {32} \
@@ -320,7 +327,7 @@ CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 {-0.073} \
 CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 {-0.034} \
 CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 {-0.03} \
 CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 {-0.082} \
-CONFIG.PCW_UIPARAM_DDR_FREQ_MHZ {525} \
+CONFIG.PCW_UIPARAM_DDR_FREQ_MHZ {200} \
 CONFIG.PCW_UIPARAM_DDR_PARTNO {MT41K128M16 JT-125} \
 CONFIG.PCW_UIPARAM_DDR_TRAIN_DATA_EYE {1} \
 CONFIG.PCW_UIPARAM_DDR_TRAIN_READ_GATE {1} \
@@ -347,10 +354,12 @@ CONFIG.NUM_MI {1} \
   connect_bd_intf_net -intf_net gslcd_0_m00_axi [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins gslcd_0/m00_axi]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
+  connect_bd_intf_net -intf_net processing_system7_0_IIC_0 [get_bd_intf_ports IIC_0] [get_bd_intf_pins processing_system7_0/IIC_0]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins gslcd_0/s00_axi] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
 
   # Create port connections
+  connect_bd_net -net GPIO_I_1 [get_bd_ports TSINT] [get_bd_pins processing_system7_0/GPIO_I]
   connect_bd_net -net gslcd_0_LCD_DATA [get_bd_ports LCD_DATA] [get_bd_pins gslcd_0/LCD_DATA]
   connect_bd_net -net gslcd_0_LCD_DEN [get_bd_ports LCD_DEN] [get_bd_pins gslcd_0/LCD_DEN]
   connect_bd_net -net gslcd_0_LCD_HSYNC [get_bd_ports LCD_HSYNC] [get_bd_pins gslcd_0/LCD_HSYNC]
